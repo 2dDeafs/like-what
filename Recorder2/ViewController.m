@@ -15,6 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btRec;
 @property (weak, nonatomic) IBOutlet UIButton *btStop;
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
+@property (weak, nonatomic) IBOutlet UIButton *btAnalyze;
+@property (weak, nonatomic) NSTimer *timer;
 
 @end
 
@@ -50,7 +52,9 @@
     recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
     recorder.delegate = self;
     recorder.meteringEnabled = YES;
+    
     [recorder prepareToRecord];
+    
 }
 
 
@@ -64,8 +68,10 @@
         [session setActive:YES error:nil];
         
         // Start recording
+        recorder.meteringEnabled = YES;
         [recorder record];
         [_btRec setTitle:@"Pause" forState:UIControlStateNormal];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
         
     } else {
         
@@ -73,6 +79,8 @@
         [recorder pause];
         [_btRec setTitle:@"Record" forState:UIControlStateNormal];
     }
+    
+    
     
     _btStop.enabled = YES;
     _btPlay.enabled = NO;
@@ -100,7 +108,7 @@
         
         [player play];
         
-        _btRec.enabled = NO;
+        _btRec.enabled = YES;
     }
 }
 
@@ -113,6 +121,14 @@
     [alert show];
 }
 
+- (IBAction)Analyze:(UIButton *)sender {
+    
+}
+
+-(void) printAveragePower {
+    [recorder updateMeters];
+    NSLog(@"Channel #1: %.5f Peak: %.5f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
+}
 
 - (void)didReceiveMemoryWarning
 {
