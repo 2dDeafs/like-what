@@ -24,18 +24,18 @@
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-8L-OVf">
-                                <rect key="frame" x="96" y="76" width="128" height="128"/>
+                                <rect key="frame" x="96" y="131" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="1391646644_Microphone_1.png"/>
+                                <state key="normal" image="Microphone.png"/>
                                 <connections>
                                     <action selector="RecordStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xYj-Qc-7DZ"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-IO-IzR">
-                                <rect key="frame" x="110" y="243" width="100" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-IO-IzR">
+                                <rect key="frame" x="110" y="289" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Stop">
+                                <state key="normal" image="Pause.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Qp-8hv">
-                                <rect key="frame" x="128" y="284" width="64" height="41"/>
+                                <rect key="frame" x="128" y="443" width="64" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Play">
@@ -54,24 +54,21 @@
                                     <action selector="Playing:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="C5y-65-olf"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sjm-OT-wdv">
-                                <rect key="frame" x="200" y="433" width="100" height="30"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Clique no Microfone para iniciar" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="178" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-0m-jIA">
+                                <rect key="frame" x="71" y="82" width="178" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Analyze Audio">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="Analyze:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="wg5-rM-CY4"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="btAnalyze" destination="sjm-OT-wdv" id="sc2-fZ-D45"/>
                         <outlet property="btPlay" destination="P4E-Qp-8hv" id="Lkm-Km-mfK"/>
                         <outlet property="btRec" destination="vfY-8L-OVf" id="Zcv-WC-Haa"/>
                         <outlet property="btStop" destination="I5e-IO-IzR" id="Wlg-P4-fi8"/>
+                        <outlet property="lbInstruction" destination="qYt-0m-jIA" id="rMx-fv-ibD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -79,7 +76,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="1391646644_Microphone_1.png" width="128" height="128"/>
+        <image name="Microphone.png" width="128" height="128"/>
+        <image name="Pause.png" width="128" height="128"/>
         <image name="background_example.png" width="320" height="519"/>
     </resources>
     <color key="tintColor" red="0.031372550874948502" green="0.0039215688593685627" blue="0.0039215688593685627" alpha="1" colorSpace="deviceRGB"/>

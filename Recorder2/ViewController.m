@@ -15,8 +15,8 @@
 @property (weak, nonatomic) IBOutlet UIButton *btRec;
 @property (weak, nonatomic) IBOutlet UIButton *btStop;
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
-@property (weak, nonatomic) IBOutlet UIButton *btAnalyze;
 @property (weak, nonatomic) NSTimer *timer;
+@property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
 
 @end
 
@@ -72,25 +72,22 @@
         [recorder record];
         [_btRec setTitle:@"Pause" forState:UIControlStateNormal];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
-        
-    } else {
-        
-        // Pause recording
-        [recorder pause];
-        [_btRec setTitle:@"Record" forState:UIControlStateNormal];
+        _btRec.enabled = NO;
     }
-    
-    
     
     _btStop.enabled = YES;
     _btPlay.enabled = NO;
+    _lbInstruction.text = @"Clique para pausar leituras";
 }
 
 - (IBAction)StopRec:(id)sender {
     [recorder stop];
+    [_timer invalidate];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
+    
+    _lbInstruction.text = @"Leitura em pausa";
 }
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [_btRec setTitle:@"Record" forState:UIControlStateNormal];
@@ -114,16 +111,13 @@
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Finish playing the recording!"
+                                                    message: @"Finish playing the record!"
                                                    delegate: nil
                                           cancelButtonTitle:@"OK"
                                           otherButtonTitles:nil];
     [alert show];
 }
 
-- (IBAction)Analyze:(UIButton *)sender {
-    
-}
 
 -(void) printAveragePower {
     [recorder updateMeters];

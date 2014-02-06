@@ -21,8 +21,9 @@
 		1C5A7B1A18A1460200E338B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF918A1460100E338B4 /* UIKit.framework */; };
 		1C5A7B2218A1460200E338B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2018A1460200E338B4 /* InfoPlist.strings */; };
 		1C5A7B2418A1460200E338B4 /* Recorder2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */; };
+		1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1BF9218A3F63F00C0DC19 /* Microphone.png */; };
+		1CB1BF9518A3F70B00C0DC19 /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1BF9418A3F70B00C0DC19 /* Pause.png */; };
 		1CBA8DA118A2C125001168D3 /* background_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA018A2C125001168D3 /* background_example.png */; };
-		1CBA8DA318A2C358001168D3 /* 1391646644_Microphone_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA218A2C358001168D3 /* 1391646644_Microphone_1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +56,9 @@
 		1C5A7B1F18A1460200E338B4 /* Recorder2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Recorder2Tests-Info.plist"; sourceTree = "<group>"; };
 		1C5A7B2118A1460200E338B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recorder2Tests.m; sourceTree = "<group>"; };
+		1CB1BF9218A3F63F00C0DC19 /* Microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microphone.png; sourceTree = "<group>"; };
+		1CB1BF9418A3F70B00C0DC19 /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pause.png; path = ../Pause.png; sourceTree = "<group>"; };
 		1CBA8DA018A2C125001168D3 /* background_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_example.png; sourceTree = "<group>"; };
-		1CBA8DA218A2C358001168D3 /* 1391646644_Microphone_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1391646644_Microphone_1.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +124,8 @@
 				1C5A7B0D18A1460100E338B4 /* ViewController.h */,
 				1C5A7B0E18A1460100E338B4 /* ViewController.m */,
 				1C5A7B1018A1460100E338B4 /* Images.xcassets */,
-				1CBA8DA218A2C358001168D3 /* 1391646644_Microphone_1.png */,
+				1CB1BF9418A3F70B00C0DC19 /* Pause.png */,
+				1CB1BF9218A3F63F00C0DC19 /* Microphone.png */,
 				1CBA8DA018A2C125001168D3 /* background_example.png */,
 				1C5A7AFC18A1460100E338B4 /* Supporting Files */,
 			);
@@ -234,11 +237,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CB1BF9518A3F70B00C0DC19 /* Pause.png in Resources */,
 				1CBA8DA118A2C125001168D3 /* background_example.png in Resources */,
 				1C5A7B1118A1460100E338B4 /* Images.xcassets in Resources */,
 				1C5A7B0918A1460100E338B4 /* Main_iPhone.storyboard in Resources */,
-				1CBA8DA318A2C358001168D3 /* 1391646644_Microphone_1.png in Resources */,
 				1C5A7B0018A1460100E338B4 /* InfoPlist.strings in Resources */,
+				1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
