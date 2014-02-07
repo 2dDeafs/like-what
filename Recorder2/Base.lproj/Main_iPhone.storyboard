@@ -1,10 +1,49 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gtt-l8-kgd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="8gq-Q1-YBz">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="Gtt-l8-kgd" sceneMemberID="viewController">
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="nJD-f9-UN2">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="cgQ-Sx-ZHi" kind="relationship" relationship="viewControllers" id="9M3-0L-UMI"/>
+                        <segue destination="qld-6L-can" kind="relationship" relationship="viewControllers" id="d7y-MO-RqD"/>
+                        <segue destination="iNE-2G-Cpt" kind="relationship" relationship="viewControllers" id="LTa-75-arK"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A1u-CC-4eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-593" y="342"/>
+        </scene>
+        <!--View Controller - Sobre-->
+        <scene sceneID="QTo-y0-2CJ">
+            <objects>
+                <viewController id="iNE-2G-Cpt" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OuW-lB-fAr"/>
+                        <viewControllerLayoutGuide type="bottom" id="dhq-BQ-azu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="o92-hP-5ae">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Sobre" image="info.png" id="wef-ab-fms"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jW8-A9-egU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="1060"/>
+        </scene>
+        <!--View Controller - Ouvir-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
@@ -17,15 +56,15 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-8L-OVf">
-                                <rect key="frame" x="96" y="131" width="128" height="128"/>
+                                <rect key="frame" x="84" y="140" width="152" height="151"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="Microphone.png"/>
+                                <state key="normal" backgroundImage="Microphone.png"/>
                                 <connections>
                                     <action selector="RecordStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xYj-Qc-7DZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-IO-IzR">
-                                <rect key="frame" x="110" y="289" width="100" height="100"/>
+                                <rect key="frame" x="119" y="318" width="82" height="82"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" image="Pause.png">
@@ -36,7 +75,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Qp-8hv">
-                                <rect key="frame" x="128" y="443" width="64" height="41"/>
+                                <rect key="frame" x="128" y="408" width="64" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Play">
@@ -55,8 +94,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Ouvir" image="listen.png" id="AvA-50-HSj"/>
+                    <navigationItem key="navigationItem" id="6Zr-aw-iyL"/>
                     <connections>
                         <outlet property="btPlay" destination="P4E-Qp-8hv" id="Lkm-Km-mfK"/>
                         <outlet property="btRec" destination="vfY-8L-OVf" id="Zcv-WC-Haa"/>
@@ -66,11 +107,50 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="541" y="-434"/>
+        </scene>
+        <!--Navigation Controller - Ouvir-->
+        <scene sceneID="FpX-bq-CMP">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="cgQ-Sx-ZHi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ouvir" image="listen.png" id="EWZ-Fk-5FL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="aa8-Ts-L85">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="IwY-qi-bZt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Xg-Bu-gUG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="-434"/>
+        </scene>
+        <!--View Controller - Item-->
+        <scene sceneID="q7A-I6-56I">
+            <objects>
+                <viewController id="qld-6L-can" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zYu-Og-tMt"/>
+                        <viewControllerLayoutGuide type="bottom" id="JRD-Wz-4sj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZaN-MB-w39">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Item" image="controls.png" id="zkC-zg-eT4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vR2-TV-NBy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-5" y="342"/>
         </scene>
     </scenes>
     <resources>
         <image name="Microphone.png" width="128" height="128"/>
         <image name="Pause.png" width="128" height="128"/>
+        <image name="controls.png" width="30" height="30"/>
+        <image name="info.png" width="36" height="36"/>
+        <image name="listen.png" width="30" height="30"/>
     </resources>
     <color key="tintColor" red="0.031372550874948502" green="0.0039215688593685627" blue="0.0039215688593685627" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
