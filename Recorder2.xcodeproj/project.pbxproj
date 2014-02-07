@@ -27,6 +27,11 @@
 		4C722E7C18A54999001B35FC /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7B18A54999001B35FC /* info.png */; };
 		4C722E8018A54CBD001B35FC /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7F18A54CBD001B35FC /* listen.png */; };
 		4C722E8418A54E03001B35FC /* controls.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8318A54E03001B35FC /* controls.png */; };
+		4C722E8618A55B13001B35FC /* donini.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8518A55B13001B35FC /* donini.jpg */; };
+		4C722E8A18A55C71001B35FC /* 2dDeafs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8718A55C71001B35FC /* 2dDeafs-background.png */; };
+		4C722E8B18A55C71001B35FC /* 2dDeafs-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */; };
+		4C722E8C18A55C71001B35FC /* 2dDeafs-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */; };
+		4C722E8E18A55DB8001B35FC /* BackGround_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +70,11 @@
 		4C722E7B18A54999001B35FC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		4C722E7F18A54CBD001B35FC /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
 		4C722E8318A54E03001B35FC /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
+		4C722E8518A55B13001B35FC /* donini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donini.jpg; sourceTree = "<group>"; };
+		4C722E8718A55C71001B35FC /* 2dDeafs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-background.png"; sourceTree = "<group>"; };
+		4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-mic.png"; sourceTree = "<group>"; };
+		4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-pause.png"; sourceTree = "<group>"; };
+		4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackGround_2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +140,11 @@
 				1C5A7B0D18A1460100E338B4 /* ViewController.h */,
 				1C5A7B0E18A1460100E338B4 /* ViewController.m */,
 				1C5A7B1018A1460100E338B4 /* Images.xcassets */,
+				4C722E8718A55C71001B35FC /* 2dDeafs-background.png */,
+				4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */,
+				4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */,
+				4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */,
+				4C722E8518A55B13001B35FC /* donini.jpg */,
 				4C722E8318A54E03001B35FC /* controls.png */,
 				4C722E7F18A54CBD001B35FC /* listen.png */,
 				4C722E7B18A54999001B35FC /* info.png */,
@@ -246,14 +261,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C722E8C18A55C71001B35FC /* 2dDeafs-pause.png in Resources */,
 				1CBA8DA118A2C125001168D3 /* background_example.png in Resources */,
 				4C722E7C18A54999001B35FC /* info.png in Resources */,
 				1C5A7B1118A1460100E338B4 /* Images.xcassets in Resources */,
 				1C5A7B0918A1460100E338B4 /* Main_iPhone.storyboard in Resources */,
+				4C722E8618A55B13001B35FC /* donini.jpg in Resources */,
+				4C722E8B18A55C71001B35FC /* 2dDeafs-mic.png in Resources */,
 				4C722E8018A54CBD001B35FC /* listen.png in Resources */,
+				4C722E8E18A55DB8001B35FC /* BackGround_2.jpg in Resources */,
 				4C722E8418A54E03001B35FC /* controls.png in Resources */,
 				1C5A7B0018A1460100E338B4 /* InfoPlist.strings in Resources */,
 				1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */,
+				4C722E8A18A55C71001B35FC /* 2dDeafs-background.png in Resources */,
 				4C722E7A18A54929001B35FC /* Pause.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
