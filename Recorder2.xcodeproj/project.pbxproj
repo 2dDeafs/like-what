@@ -21,9 +21,9 @@
 		1C5A7B1A18A1460200E338B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF918A1460100E338B4 /* UIKit.framework */; };
 		1C5A7B2218A1460200E338B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2018A1460200E338B4 /* InfoPlist.strings */; };
 		1C5A7B2418A1460200E338B4 /* Recorder2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */; };
-		1C9C3C2618A9337800D5A1F3 /* Salvar_Audio.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C3C2518A9337800D5A1F3 /* Salvar_Audio.m */; };
 		1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1BF9218A3F63F00C0DC19 /* Microphone.png */; };
 		1CBA8DA118A2C125001168D3 /* background_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA018A2C125001168D3 /* background_example.png */; };
+		4C3C46F618A9477300B7BE48 /* SaveAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4C3C46F518A9477300B7BE48 /* SaveAudioViewController.m */; };
 		4C722E7A18A54929001B35FC /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7918A54929001B35FC /* Pause.png */; };
 		4C722E7C18A54999001B35FC /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7B18A54999001B35FC /* info.png */; };
 		4C722E8018A54CBD001B35FC /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7F18A54CBD001B35FC /* listen.png */; };
@@ -65,19 +65,19 @@
 		1C5A7B1F18A1460200E338B4 /* Recorder2Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Recorder2Tests-Info.plist"; sourceTree = "<group>"; };
 		1C5A7B2118A1460200E338B4 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recorder2Tests.m; sourceTree = "<group>"; };
-		1C9C3C2418A9337800D5A1F3 /* Salvar_Audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Salvar_Audio.h; sourceTree = "<group>"; };
-		1C9C3C2518A9337800D5A1F3 /* Salvar_Audio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Salvar_Audio.m; sourceTree = "<group>"; };
-		1CB1BF9218A3F63F00C0DC19 /* Microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microphone.png; sourceTree = "<group>"; };
-		1CBA8DA018A2C125001168D3 /* background_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_example.png; sourceTree = "<group>"; };
-		4C722E7918A54929001B35FC /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
-		4C722E7B18A54999001B35FC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
-		4C722E7F18A54CBD001B35FC /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
-		4C722E8318A54E03001B35FC /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
-		4C722E8518A55B13001B35FC /* donini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donini.jpg; sourceTree = "<group>"; };
-		4C722E8718A55C71001B35FC /* 2dDeafs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-background.png"; sourceTree = "<group>"; };
-		4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-mic.png"; sourceTree = "<group>"; };
-		4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-pause.png"; sourceTree = "<group>"; };
-		4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackGround_2.jpg; sourceTree = "<group>"; };
+		1CB1BF9218A3F63F00C0DC19 /* Microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Microphone.png; path = Recorder2/Microphone.png; sourceTree = "<group>"; };
+		1CBA8DA018A2C125001168D3 /* background_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background_example.png; path = Recorder2/background_example.png; sourceTree = "<group>"; };
+		4C3C46F418A9477300B7BE48 /* SaveAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAudioViewController.h; sourceTree = "<group>"; };
+		4C3C46F518A9477300B7BE48 /* SaveAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveAudioViewController.m; sourceTree = "<group>"; };
+		4C722E7918A54929001B35FC /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Pause.png; path = Recorder2/Pause.png; sourceTree = "<group>"; };
+		4C722E7B18A54999001B35FC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = info.png; path = Recorder2/info.png; sourceTree = "<group>"; };
+		4C722E7F18A54CBD001B35FC /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = listen.png; path = Recorder2/listen.png; sourceTree = "<group>"; };
+		4C722E8318A54E03001B35FC /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = controls.png; path = Recorder2/controls.png; sourceTree = "<group>"; };
+		4C722E8518A55B13001B35FC /* donini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = donini.jpg; path = Recorder2/donini.jpg; sourceTree = "<group>"; };
+		4C722E8718A55C71001B35FC /* 2dDeafs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2dDeafs-background.png"; path = "Recorder2/2dDeafs-background.png"; sourceTree = "<group>"; };
+		4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2dDeafs-mic.png"; path = "Recorder2/2dDeafs-mic.png"; sourceTree = "<group>"; };
+		4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "2dDeafs-pause.png"; path = "Recorder2/2dDeafs-pause.png"; sourceTree = "<group>"; };
+		4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = BackGround_2.jpg; path = Recorder2/BackGround_2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +107,7 @@
 		1C5A7AE918A1460100E338B4 = {
 			isa = PBXGroup;
 			children = (
+				4C3C46F718A947AF00B7BE48 /* Images */,
 				1C5A7AFB18A1460100E338B4 /* Recorder2 */,
 				1C5A7B1D18A1460200E338B4 /* Recorder2Tests */,
 				1C5A7AF418A1460100E338B4 /* Frameworks */,
@@ -140,23 +141,12 @@
 				1C5A7B0418A1460100E338B4 /* AppDelegate.h */,
 				1C5A7B0518A1460100E338B4 /* AppDelegate.m */,
 				1C5A7B0718A1460100E338B4 /* Main_iPhone.storyboard */,
+				4C3C46F418A9477300B7BE48 /* SaveAudioViewController.h */,
+				4C3C46F518A9477300B7BE48 /* SaveAudioViewController.m */,
+				1C5A7B1018A1460100E338B4 /* Images.xcassets */,
+				1C5A7AFC18A1460100E338B4 /* Supporting Files */,
 				1C5A7B0D18A1460100E338B4 /* ViewController.h */,
 				1C5A7B0E18A1460100E338B4 /* ViewController.m */,
-				1C9C3C2418A9337800D5A1F3 /* Salvar_Audio.h */,
-				1C9C3C2518A9337800D5A1F3 /* Salvar_Audio.m */,
-				1C5A7B1018A1460100E338B4 /* Images.xcassets */,
-				4C722E8718A55C71001B35FC /* 2dDeafs-background.png */,
-				4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */,
-				4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */,
-				4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */,
-				4C722E8518A55B13001B35FC /* donini.jpg */,
-				4C722E8318A54E03001B35FC /* controls.png */,
-				4C722E7F18A54CBD001B35FC /* listen.png */,
-				4C722E7B18A54999001B35FC /* info.png */,
-				4C722E7918A54929001B35FC /* Pause.png */,
-				1CB1BF9218A3F63F00C0DC19 /* Microphone.png */,
-				1CBA8DA018A2C125001168D3 /* background_example.png */,
-				1C5A7AFC18A1460100E338B4 /* Supporting Files */,
 			);
 			path = Recorder2;
 			sourceTree = "<group>";
@@ -188,6 +178,24 @@
 				1C5A7B2018A1460200E338B4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C3C46F718A947AF00B7BE48 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4C722E8718A55C71001B35FC /* 2dDeafs-background.png */,
+				4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */,
+				4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */,
+				4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */,
+				1CBA8DA018A2C125001168D3 /* background_example.png */,
+				4C722E8318A54E03001B35FC /* controls.png */,
+				4C722E8518A55B13001B35FC /* donini.jpg */,
+				4C722E7B18A54999001B35FC /* info.png */,
+				4C722E7F18A54CBD001B35FC /* listen.png */,
+				1CB1BF9218A3F63F00C0DC19 /* Microphone.png */,
+				4C722E7918A54929001B35FC /* Pause.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +306,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3C46F618A9477300B7BE48 /* SaveAudioViewController.m in Sources */,
 				1C5A7B0F18A1460100E338B4 /* ViewController.m in Sources */,
 				1C5A7B0618A1460100E338B4 /* AppDelegate.m in Sources */,
 				1C5A7B0218A1460100E338B4 /* main.m in Sources */,
-				1C9C3C2618A9337800D5A1F3 /* Salvar_Audio.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
