@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
 @property (weak, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -27,8 +28,8 @@
     [super viewDidLoad];
     
     // Disable Stop/Play button when application launches
-    _btPlay.enabled = NO;
-    _btStop.enabled = NO;
+    [self btPlay].enabled = NO;
+    [self btStop].hidden = YES;
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -70,31 +71,33 @@
         // Start recording
         recorder.meteringEnabled = YES;
         [recorder record];
-        [_btRec setTitle:@"Pause" forState:UIControlStateNormal];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
-        _btRec.enabled = NO;
+        
+        [self flipImage:[self imageView] Horizontal:YES];
     }
     
-    _btStop.enabled = YES;
-    _btPlay.enabled = NO;
-    _lbInstruction.text = @"Clique para pausar leituras";
+    [self displayInverse];
+    [self lbInstruction].text = @"Clique para pausar leituras";
 }
 
 - (IBAction)StopRec:(id)sender {
     [recorder stop];
-    [_timer invalidate];
+    [[self timer] invalidate];
+    
+    [self displayInverse];
+    [self btPlay].enabled = YES;
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
     
-    _lbInstruction.text = @"Leitura em pausa";
+    [self lbInstruction].text = @"Leitura em pausa";
+    
+    [self flipImage:[self imageView] Horizontal:YES];
+    
 }
+
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [_btRec setTitle:@"Record" forState:UIControlStateNormal];
-    
-    _btRec.enabled = YES;
-    _btPlay.enabled = YES;
-    _btStop.enabled = NO;
 
 }
 
@@ -105,23 +108,31 @@
         
         [player play];
         
-        _btRec.enabled = YES;
     }
 }
 
+- (UIImageView *) flipImage:(UIImageView *)originalImage Horizontal:(BOOL)flipHorizontal {
+    if (flipHorizontal) {
+        
+        originalImage.transform = CGAffineTransformMake(originalImage.transform.a * -1, 0, 0, 1, originalImage.transform.tx, 0);
+    }else {
+        
+        originalImage.transform = CGAffineTransformMake(1, 0, 0, originalImage.transform.d * -1, 0, originalImage.transform.ty);
+    }    
+    return originalImage; }
+
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Done"
-                                                    message: @"Finish playing the record!"
-                                                   delegate: nil
-                                          cancelButtonTitle:@"OK"
-                                          otherButtonTitles:nil];
-    [alert show];
 }
 
 
 -(void) printAveragePower {
     [recorder updateMeters];
     NSLog(@"Channel #1: %.5f Peak: %.5f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
+}
+
+- (void)displayInverse {
+    [self btRec].hidden = ![self btRec].hidden;
+    [self btStop].hidden = ![self btStop].hidden;
 }
 
 - (void)didReceiveMemoryWarning

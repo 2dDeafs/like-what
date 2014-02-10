@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="13A603" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gtt-l8-kgd">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4514" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Gtt-l8-kgd">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3747"/>
     </dependencies>
@@ -66,13 +66,12 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vfY-8L-OVf">
-                                <rect key="frame" x="96" y="184" width="128" height="128"/>
+                                <rect key="frame" x="96" y="186" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Mic Button" image="2dDeafs-mic.png"/>
                                 <connections>
                                     <action selector="RecordStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xYj-Qc-7DZ"/>
-                                    <segue destination="BPC-TV-wiT" kind="push" id="avr-la-HKM"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4E-Qp-8hv">
@@ -88,12 +87,23 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Aguardando" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qYt-0m-jIA">
-                                <rect key="frame" x="71" y="83" width="178" height="41"/>
+                                <rect key="frame" x="20" y="83" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-IO-IzR">
+                                <rect key="frame" x="110" y="200" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Pause Button" image="2dDeafs-pause.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="StopRec:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tmM-S3-9Bp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -104,56 +114,13 @@
                         <outlet property="btPlay" destination="P4E-Qp-8hv" id="Lkm-Km-mfK"/>
                         <outlet property="btRec" destination="vfY-8L-OVf" id="Zcv-WC-Haa"/>
                         <outlet property="btStop" destination="I5e-IO-IzR" id="Wlg-P4-fi8"/>
+                        <outlet property="imageView" destination="kfK-Au-Qb2" id="aID-jN-azc"/>
                         <outlet property="lbInstruction" destination="qYt-0m-jIA" id="rMx-fv-ibD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="497" y="-914"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="mFi-dy-wJB">
-            <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="BPC-TV-wiT" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IfT-9D-Jth"/>
-                        <viewControllerLayoutGuide type="bottom" id="7kk-se-I3Q"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="uxx-Ge-bRG">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BackGround_2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="B1c-li-wmV">
-                                <rect key="frame" x="0.0" y="-19" width="320" height="587"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I5e-IO-IzR">
-                                <rect key="frame" x="110" y="190" width="100" height="100"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Pause Button" image="2dDeafs-pause.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="StopRec:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tmM-S3-9Bp"/>
-                                    <segue destination="vXZ-lx-hvc" kind="push" id="VNY-nj-Yt5"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Monitorando" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-xK-6l0">
-                                <rect key="frame" x="101" y="88" width="119" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="32Q-mG-vvq"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GTE-dm-CqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1036" y="-914"/>
+            <point key="canvasLocation" x="421" y="-434"/>
         </scene>
         <!--Navigation Controller - Ouvir-->
         <scene sceneID="FpX-bq-CMP">
@@ -205,7 +172,7 @@
                                 <rect key="frame" x="95" y="88" width="131" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Adcionar Audio">
+                                <state key="normal" title="Adicionar áudio">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -221,10 +188,10 @@
             </objects>
             <point key="canvasLocation" x="345" y="304"/>
         </scene>
-        <!--View Controller-->
+        <!--Save Audio View Controller-->
         <scene sceneID="jOG-Nq-E9T">
             <objects>
-                <viewController id="1ml-4X-SgR" sceneMemberID="viewController">
+                <viewController id="1ml-4X-SgR" customClass="SaveAudioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="q1P-Uh-TcZ"/>
                         <viewControllerLayoutGuide type="bottom" id="aiP-UX-6ql"/>
@@ -278,7 +245,4 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="VNY-nj-Yt5"/>
-    </inferredMetricsTieBreakers>
 </document>

@@ -6,8 +6,8 @@
 //  Copyright (c) 2014 Matheus Cardoso. All rights reserved.
 //
 
-#import "Salvar_Audio.h"
+#import "SaveAudioViewController.h"
 
-@implementation Salvar_Audio
+@implementation SaveAudioViewController
 
 @end
