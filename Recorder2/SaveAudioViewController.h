@@ -8,6 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Salvar_Audio : NSObject
+@interface SaveAudioViewController : UIViewController
 
 @end
