@@ -12,11 +12,11 @@
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
 }
-@property (weak, nonatomic) IBOutlet UIButton *btRec;
-@property (weak, nonatomic) IBOutlet UIButton *btStop;
+@property (strong, nonatomic) NSTimer *timer;
+@property (strong, nonatomic) IBOutlet UILabel *lbInstruction;
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
-@property (weak, nonatomic) NSTimer *timer;
-@property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
+@property (weak, nonatomic) IBOutlet UIButton *btStop;
+@property (weak, nonatomic) IBOutlet UIButton *btRec;
 
 @end
 
@@ -27,8 +27,8 @@
     [super viewDidLoad];
     
     // Disable Stop/Play button when application launches
-    _btPlay.enabled = NO;
-    _btStop.enabled = NO;
+    //_btPlay.enabled = NO;
+    //_btStop.enabled = NO;
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -51,7 +51,7 @@
     // Initiate and prepare the recorder
     recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
     recorder.delegate = self;
-    recorder.meteringEnabled = YES;
+    //recorder.meteringEnabled = YES;
     
     [recorder prepareToRecord];
     
@@ -75,26 +75,27 @@
         _btRec.enabled = NO;
     }
     
-    _btStop.enabled = YES;
+    //_btStop.enabled = YES;
     _btPlay.enabled = NO;
     _lbInstruction.text = @"Clique para pausar leituras";
 }
 
 - (IBAction)StopRec:(id)sender {
     [recorder stop];
-    [_timer invalidate];
+    [self.timer invalidate];
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
     [audioSession setActive:NO error:nil];
     
     _lbInstruction.text = @"Leitura em pausa";
 }
+
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
     [_btRec setTitle:@"Record" forState:UIControlStateNormal];
     
-    _btRec.enabled = YES;
+    //_btRec.enabled = YES;
     _btPlay.enabled = YES;
-    _btStop.enabled = NO;
+    //_btStop.enabled = NO;
 
 }
 
