@@ -114,6 +114,7 @@
                         <outlet property="btPlay" destination="P4E-Qp-8hv" id="Lkm-Km-mfK"/>
                         <outlet property="btRec" destination="vfY-8L-OVf" id="Zcv-WC-Haa"/>
                         <outlet property="btStop" destination="I5e-IO-IzR" id="Wlg-P4-fi8"/>
+                        <outlet property="imageView" destination="kfK-Au-Qb2" id="aID-jN-azc"/>
                         <outlet property="lbInstruction" destination="qYt-0m-jIA" id="rMx-fv-ibD"/>
                     </connections>
                 </viewController>

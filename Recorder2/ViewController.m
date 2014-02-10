@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
 @property (weak, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -71,6 +72,8 @@
         recorder.meteringEnabled = YES;
         [recorder record];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
+        
+        [self flipImage:[self imageView] Horizontal:YES];
     }
     
     [self displayInverse];
@@ -88,6 +91,9 @@
     [audioSession setActive:NO error:nil];
     
     [self lbInstruction].text = @"Leitura em pausa";
+    
+    [self flipImage:[self imageView] Horizontal:YES];
+    
 }
 
 - (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
@@ -104,6 +110,16 @@
         
     }
 }
+
+- (UIImageView *) flipImage:(UIImageView *)originalImage Horizontal:(BOOL)flipHorizontal {
+    if (flipHorizontal) {
+        
+        originalImage.transform = CGAffineTransformMake(originalImage.transform.a * -1, 0, 0, 1, originalImage.transform.tx, 0);
+    }else {
+        
+        originalImage.transform = CGAffineTransformMake(1, 0, 0, originalImage.transform.d * -1, 0, originalImage.transform.ty);
+    }    
+    return originalImage; }
 
 - (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
 }
