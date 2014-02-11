@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
-@interface SaveAudioViewController : UIViewController
+@interface SaveAudioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tbAudio;
 
 @end

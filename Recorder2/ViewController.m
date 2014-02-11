@@ -121,9 +121,6 @@
     }    
     return originalImage; }
 
-- (void) audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag{
-}
-
 
 -(void) printAveragePower {
     [recorder updateMeters];
