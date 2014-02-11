@@ -180,7 +180,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wfm-ah-9hT" kind="push" id="nL2-YB-Ojm"/>
+                                    <action selector="adcionar:" destination="eiH-f0-9GO" eventType="touchUpInside" id="GfE-8X-gWz"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-0H-jzg">
@@ -197,14 +197,17 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uY4-Yx-BUk">
-                                <rect key="frame" x="130" y="202" width="61" height="30"/>
+                                <rect key="frame" x="92" y="202" width="137" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="GRAVAR">
+                                <state key="normal" title="Iniciar Gravação">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="Gravar:" destination="eiH-f0-9GO" eventType="touchUpInside" id="QfN-n2-pM6"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YbC-0t-ecB">
-                                <rect key="frame" x="0.0" y="135" width="320" height="315"/>
+                                <rect key="frame" x="0.0" y="135" width="320" height="388"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -215,7 +218,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tva-Z8-P4n">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tva-Z8-P4n">
                                                     <rect key="frame" x="20" y="11" width="236" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -227,6 +230,10 @@
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
+                                <connections>
+                                    <outlet property="dataSource" destination="eiH-f0-9GO" id="uqr-Nz-XeH"/>
+                                    <outlet property="delegate" destination="eiH-f0-9GO" id="Lht-I4-scm"/>
+                                </connections>
                             </tableView>
                         </subviews>
                     </view>
@@ -234,6 +241,9 @@
                         <barButtonItem key="backBarButtonItem" title="Cancelar" id="AjH-jJ-ibb"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="btAddAudio" destination="AJf-df-h06" id="sB9-1e-vtH"/>
+                        <outlet property="btGravarAudio" destination="uY4-Yx-BUk" id="rZC-an-RWm"/>
+                        <outlet property="lbNomeAudio" destination="bWz-0H-jzg" id="qGe-SR-Vul"/>
                         <outlet property="tbAudio" destination="YbC-0t-ecB" id="LxF-fZ-lrl"/>
                     </connections>
                 </viewController>

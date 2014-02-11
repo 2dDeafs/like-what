@@ -34,7 +34,7 @@
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
                         [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"MyAudioMemo.m4a", nil];
+                               @"AudioLIVE.m4a", nil];
    
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     

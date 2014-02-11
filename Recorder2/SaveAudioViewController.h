@@ -7,9 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <AVFoundation/AVFoundation.h>
+#import <UIKit/UIKit.h>
 
-@interface SaveAudioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface SaveAudioViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, AVAudioSessionDelegate, AVAudioRecorderDelegate, AVAudioPlayerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tbAudio;
+@property (weak, nonatomic) IBOutlet UIButton *btAddAudio;
 
 @end
