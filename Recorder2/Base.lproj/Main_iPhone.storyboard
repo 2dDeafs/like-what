@@ -180,7 +180,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="adcionar:" destination="eiH-f0-9GO" eventType="touchUpInside" id="GfE-8X-gWz"/>
+                                    <action selector="adicionar:" destination="eiH-f0-9GO" eventType="touchUpInside" id="ASQ-G8-HPg"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-0H-jzg">

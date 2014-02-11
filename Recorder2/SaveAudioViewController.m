@@ -10,7 +10,7 @@
 @interface SaveAudioViewController(){
     AVAudioRecorder *recorder;
 }
-
+- (IBAction)adicionar:(id)sender;
 @property NSMutableArray *directoryContents;
 @property BOOL isAdding;
 @property (weak, nonatomic) IBOutlet UITextField *lbNomeAudio;
@@ -45,7 +45,8 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)adcionar:(id)sender {
+
+- (IBAction)adicionar:(id)sender {
     if(!_isAdding){
     
     [_btAddAudio setTitle:@"Cancelar" forState:UIControlStateNormal];
@@ -57,12 +58,13 @@
     
     }
     else{
-        [_btAddAudio setTitle:@"+ Adcionar Audio" forState:UIControlStateNormal];
+        [_btAddAudio setTitle:@"+ Adicionar Audio" forState:UIControlStateNormal];
 
         CGPoint newCenter = _tbAudio.center;
         newCenter.y -= 100;
         _tbAudio.center = newCenter;
         _isAdding = NO;
+        // passar foco para o campo de texto
     }
     
     
@@ -108,13 +110,15 @@
             
             [recorder stop];
             
-            [_btGravarAudio setTitle:@"Iniciar Gravação" forState:UIControlStateNormal];
             UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Salvo" message:@"O Arquivo foi salvo com sucesso" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [alerta show];
         
             [[self directoryContents] addObject: nomeAudio];
             [[self tbAudio] reloadData];
+            [[self lbNomeAudio] resignFirstResponder];
+            [_btGravarAudio setTitle:@"Iniciar Gravação" forState:UIControlStateNormal];
+            [self adicionar:nil];
         }
 
     }
@@ -156,7 +160,7 @@
     [[self lbNomeAudio] resignFirstResponder];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField{
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
