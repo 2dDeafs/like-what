@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C5A7AF618A1460100E338B4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF518A1460100E338B4 /* Foundation.framework */; };
-		1C5A7AF818A1460100E338B4 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF718A1460100E338B4 /* CoreGraphics.framework */; };
-		1C5A7AFA18A1460100E338B4 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF918A1460100E338B4 /* UIKit.framework */; };
 		1C5A7B0018A1460100E338B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A7AFE18A1460100E338B4 /* InfoPlist.strings */; };
 		1C5A7B0218A1460100E338B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B0118A1460100E338B4 /* main.m */; };
 		1C5A7B0618A1460100E338B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B0518A1460100E338B4 /* AppDelegate.m */; };
@@ -23,8 +20,11 @@
 		1C5A7B2418A1460200E338B4 /* Recorder2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */; };
 		1C9C3C2618A9337800D5A1F3 /* SaveAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C3C2518A9337800D5A1F3 /* SaveAudioViewController.m */; };
 		1CBA8DA118A2C125001168D3 /* background_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA018A2C125001168D3 /* background_example.png */; };
+		3A06F4F618ABFAF1004AE155 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84D6D318AB389B003AF85B /* Accelerate.framework */; };
+		3A06F4F818ABFB1E004AE155 /* vDSP.h in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06F4F718ABFB1D004AE155 /* vDSP.h */; };
+		3A06F4FA18ABFB36004AE155 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06F4F918ABFB36004AE155 /* CoreAudio.framework */; };
+		3A06F4FB18ABFB42004AE155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF518A1460100E338B4 /* Foundation.framework */; };
 		3A84D6D218AB1738003AF85B /* TesteFFTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */; };
-		3A84D6D418AB389B003AF85B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84D6D318AB389B003AF85B /* Accelerate.framework */; };
 		3A84D6D818AB3EB3003AF85B /* 2dDeafs-background-aux.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */; };
 		3A84D6D918AB3EB3003AF85B /* 2dDeafs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6D718AB3EB3003AF85B /* 2dDeafs-background.png */; };
 		3A84D6DC18AB41C6003AF85B /* 2dDeafs-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */; };
@@ -67,6 +67,14 @@
 		1C9C3C2418A9337800D5A1F3 /* SaveAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAudioViewController.h; sourceTree = "<group>"; };
 		1C9C3C2518A9337800D5A1F3 /* SaveAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveAudioViewController.m; sourceTree = "<group>"; };
 		1CBA8DA018A2C125001168D3 /* background_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_example.png; sourceTree = "<group>"; };
+		3A06F4EC18ABCDD4004AE155 /* vecLib.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = vecLib.framework; sourceTree = "<group>"; };
+		3A06F4EF18ABF621004AE155 /* fft4g.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = fft4g.c; sourceTree = "<group>"; };
+		3A06F4F018ABF621004AE155 /* fft4g.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = fft4g.h; sourceTree = "<group>"; };
+		3A06F4F118ABF621004AE155 /* OouraFFT.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OouraFFT.h; sourceTree = "<group>"; };
+		3A06F4F218ABF621004AE155 /* OouraFFT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OouraFFT.m; sourceTree = "<group>"; };
+		3A06F4F318ABF621004AE155 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		3A06F4F718ABFB1D004AE155 /* vDSP.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = vDSP.h; path = vecLib.framework/Headers/vDSP.h; sourceTree = "<group>"; };
+		3A06F4F918ABFB36004AE155 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		3A84D6D018AB1738003AF85B /* TesteFFTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesteFFTViewController.h; sourceTree = "<group>"; };
 		3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesteFFTViewController.m; sourceTree = "<group>"; };
 		3A84D6D318AB389B003AF85B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
@@ -84,10 +92,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A84D6D418AB389B003AF85B /* Accelerate.framework in Frameworks */,
-				1C5A7AF818A1460100E338B4 /* CoreGraphics.framework in Frameworks */,
-				1C5A7AFA18A1460100E338B4 /* UIKit.framework in Frameworks */,
-				1C5A7AF618A1460100E338B4 /* Foundation.framework in Frameworks */,
+				3A06F4F618ABFAF1004AE155 /* Accelerate.framework in Frameworks */,
+				3A06F4FB18ABFB42004AE155 /* Foundation.framework in Frameworks */,
+				3A06F4FA18ABFB36004AE155 /* CoreAudio.framework in Frameworks */,
+				3A06F4F818ABFB1E004AE155 /* vDSP.h in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -126,6 +134,10 @@
 		1C5A7AF418A1460100E338B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A06F4F918ABFB36004AE155 /* CoreAudio.framework */,
+				3A06F4F718ABFB1D004AE155 /* vDSP.h */,
+				3A06F4EE18ABF621004AE155 /* iPhoneFFT */,
+				3A06F4EC18ABCDD4004AE155 /* vecLib.framework */,
 				3A84D6D318AB389B003AF85B /* Accelerate.framework */,
 				1C5A7AF518A1460100E338B4 /* Foundation.framework */,
 				1C5A7AF718A1460100E338B4 /* CoreGraphics.framework */,
@@ -180,6 +192,19 @@
 				1C5A7B2018A1460200E338B4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A06F4EE18ABF621004AE155 /* iPhoneFFT */ = {
+			isa = PBXGroup;
+			children = (
+				3A06F4EF18ABF621004AE155 /* fft4g.c */,
+				3A06F4F018ABF621004AE155 /* fft4g.h */,
+				3A06F4F118ABF621004AE155 /* OouraFFT.h */,
+				3A06F4F218ABF621004AE155 /* OouraFFT.m */,
+				3A06F4F318ABF621004AE155 /* README */,
+			);
+			name = iPhoneFFT;
+			path = ../iPhoneFFT;
 			sourceTree = "<group>";
 		};
 		3A84D6CC18AB0B87003AF85B /* FFT */ = {
@@ -253,6 +278,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Matheus Cardoso";
 				TargetAttributes = {
+					1C5A7AF118A1460100E338B4 = {
+						DevelopmentTeam = FA22G228P2;
+					};
 					1C5A7B1518A1460200E338B4 = {
 						TestTargetID = 1C5A7AF118A1460100E338B4;
 					};
@@ -444,10 +472,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/birahh/Documents/like-what",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder2/Recorder2-Prefix.pch";
 				INFOPLIST_FILE = "Recorder2/Recorder2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -457,10 +492,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"/Users/birahh/Documents/like-what",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Recorder2/Recorder2-Prefix.pch";
 				INFOPLIST_FILE = "Recorder2/Recorder2-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

@@ -49,6 +49,7 @@
     [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
     [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
     [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
+    //[recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AV];
     
     // Initiate and prepare the recorder
     recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
@@ -118,7 +119,7 @@
 -(void) printAveragePower
 {
     [recorder updateMeters];
-    NSLog(@"Channel #1: %.5f Peak: %.5f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
+    NSLog(@"Channel #1: %.5f Peak: %.5f", [self getDecibels:[recorder averagePowerForChannel:0]], [self getDecibels:[recorder peakPowerForChannel:0]]);
 }
 
 //  Efeito de "transicao" e inversao de botoes
@@ -141,6 +142,32 @@
     
     [self btRec].hidden = ![self btRec].hidden;
     [self btStop].hidden = ![self btStop].hidden;
+}
+
+-(float) getDecibels: (float) appleValue
+{
+    float   level;                // The linear 0.0 .. 1.0 value we need.
+    float   minDecibels = -80.0f; // Or use -60dB, which I measured in a silent room.
+    
+    if (appleValue < minDecibels)
+    {
+        level = 0.0f;
+    }
+    else if (appleValue >= 0.0f)
+    {
+        level = 1.0f;
+    }
+    else
+    {
+        float   root            = 2.0f;
+        float   minAmp          = powf(10.0f, 0.05f * minDecibels);
+        float   inverseAmpRange = 1.0f / (1.0f - minAmp);
+        float   amp             = powf(10.0f, 0.05f * appleValue);
+        float   adjAmp          = (amp - minAmp) * inverseAmpRange;
+        
+        level = powf(adjAmp, 1.0f / root);
+    }
+    return level;
 }
 
 
