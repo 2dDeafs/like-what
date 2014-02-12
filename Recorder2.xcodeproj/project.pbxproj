@@ -22,17 +22,16 @@
 		1C5A7B2218A1460200E338B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2018A1460200E338B4 /* InfoPlist.strings */; };
 		1C5A7B2418A1460200E338B4 /* Recorder2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */; };
 		1C9C3C2618A9337800D5A1F3 /* SaveAudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1C9C3C2518A9337800D5A1F3 /* SaveAudioViewController.m */; };
-		1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CB1BF9218A3F63F00C0DC19 /* Microphone.png */; };
 		1CBA8DA118A2C125001168D3 /* background_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA018A2C125001168D3 /* background_example.png */; };
-		4C722E7A18A54929001B35FC /* Pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7918A54929001B35FC /* Pause.png */; };
+		3A84D6D218AB1738003AF85B /* TesteFFTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */; };
+		3A84D6D418AB389B003AF85B /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A84D6D318AB389B003AF85B /* Accelerate.framework */; };
+		3A84D6D818AB3EB3003AF85B /* 2dDeafs-background-aux.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */; };
+		3A84D6D918AB3EB3003AF85B /* 2dDeafs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6D718AB3EB3003AF85B /* 2dDeafs-background.png */; };
+		3A84D6DC18AB41C6003AF85B /* 2dDeafs-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */; };
+		3A84D6DD18AB41C6003AF85B /* 2dDeafs-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */; };
 		4C722E7C18A54999001B35FC /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7B18A54999001B35FC /* info.png */; };
 		4C722E8018A54CBD001B35FC /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7F18A54CBD001B35FC /* listen.png */; };
 		4C722E8418A54E03001B35FC /* controls.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8318A54E03001B35FC /* controls.png */; };
-		4C722E8618A55B13001B35FC /* donini.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8518A55B13001B35FC /* donini.jpg */; };
-		4C722E8A18A55C71001B35FC /* 2dDeafs-background.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8718A55C71001B35FC /* 2dDeafs-background.png */; };
-		4C722E8B18A55C71001B35FC /* 2dDeafs-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */; };
-		4C722E8C18A55C71001B35FC /* 2dDeafs-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */; };
-		4C722E8E18A55DB8001B35FC /* BackGround_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,17 +66,17 @@
 		1C5A7B2318A1460200E338B4 /* Recorder2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Recorder2Tests.m; sourceTree = "<group>"; };
 		1C9C3C2418A9337800D5A1F3 /* SaveAudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveAudioViewController.h; sourceTree = "<group>"; };
 		1C9C3C2518A9337800D5A1F3 /* SaveAudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveAudioViewController.m; sourceTree = "<group>"; };
-		1CB1BF9218A3F63F00C0DC19 /* Microphone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microphone.png; sourceTree = "<group>"; };
 		1CBA8DA018A2C125001168D3 /* background_example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background_example.png; sourceTree = "<group>"; };
-		4C722E7918A54929001B35FC /* Pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Pause.png; sourceTree = "<group>"; };
+		3A84D6D018AB1738003AF85B /* TesteFFTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesteFFTViewController.h; sourceTree = "<group>"; };
+		3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesteFFTViewController.m; sourceTree = "<group>"; };
+		3A84D6D318AB389B003AF85B /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-background-aux.png"; sourceTree = "<group>"; };
+		3A84D6D718AB3EB3003AF85B /* 2dDeafs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-background.png"; sourceTree = "<group>"; };
+		3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-mic.png"; sourceTree = "<group>"; };
+		3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-pause.png"; sourceTree = "<group>"; };
 		4C722E7B18A54999001B35FC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		4C722E7F18A54CBD001B35FC /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
 		4C722E8318A54E03001B35FC /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
-		4C722E8518A55B13001B35FC /* donini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = donini.jpg; sourceTree = "<group>"; };
-		4C722E8718A55C71001B35FC /* 2dDeafs-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-background.png"; sourceTree = "<group>"; };
-		4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-mic.png"; sourceTree = "<group>"; };
-		4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-pause.png"; sourceTree = "<group>"; };
-		4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BackGround_2.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A84D6D418AB389B003AF85B /* Accelerate.framework in Frameworks */,
 				1C5A7AF818A1460100E338B4 /* CoreGraphics.framework in Frameworks */,
 				1C5A7AFA18A1460100E338B4 /* UIKit.framework in Frameworks */,
 				1C5A7AF618A1460100E338B4 /* Foundation.framework in Frameworks */,
@@ -126,6 +126,7 @@
 		1C5A7AF418A1460100E338B4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3A84D6D318AB389B003AF85B /* Accelerate.framework */,
 				1C5A7AF518A1460100E338B4 /* Foundation.framework */,
 				1C5A7AF718A1460100E338B4 /* CoreGraphics.framework */,
 				1C5A7AF918A1460100E338B4 /* UIKit.framework */,
@@ -137,6 +138,8 @@
 		1C5A7AFB18A1460100E338B4 /* Recorder2 */ = {
 			isa = PBXGroup;
 			children = (
+				3A84D6D518AB3E97003AF85B /* Images */,
+				3A84D6CC18AB0B87003AF85B /* FFT */,
 				1C5A7B0418A1460100E338B4 /* AppDelegate.h */,
 				1C5A7B0518A1460100E338B4 /* AppDelegate.m */,
 				1C5A7B0718A1460100E338B4 /* Main_iPhone.storyboard */,
@@ -145,17 +148,6 @@
 				1C9C3C2418A9337800D5A1F3 /* SaveAudioViewController.h */,
 				1C9C3C2518A9337800D5A1F3 /* SaveAudioViewController.m */,
 				1C5A7B1018A1460100E338B4 /* Images.xcassets */,
-				4C722E8718A55C71001B35FC /* 2dDeafs-background.png */,
-				4C722E8D18A55DB8001B35FC /* BackGround_2.jpg */,
-				4C722E8818A55C71001B35FC /* 2dDeafs-mic.png */,
-				4C722E8918A55C71001B35FC /* 2dDeafs-pause.png */,
-				4C722E8518A55B13001B35FC /* donini.jpg */,
-				4C722E8318A54E03001B35FC /* controls.png */,
-				4C722E7F18A54CBD001B35FC /* listen.png */,
-				4C722E7B18A54999001B35FC /* info.png */,
-				4C722E7918A54929001B35FC /* Pause.png */,
-				1CB1BF9218A3F63F00C0DC19 /* Microphone.png */,
-				1CBA8DA018A2C125001168D3 /* background_example.png */,
 				1C5A7AFC18A1460100E338B4 /* Supporting Files */,
 			);
 			path = Recorder2;
@@ -188,6 +180,30 @@
 				1C5A7B2018A1460200E338B4 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3A84D6CC18AB0B87003AF85B /* FFT */ = {
+			isa = PBXGroup;
+			children = (
+				3A84D6D018AB1738003AF85B /* TesteFFTViewController.h */,
+				3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */,
+			);
+			name = FFT;
+			sourceTree = "<group>";
+		};
+		3A84D6D518AB3E97003AF85B /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */,
+				3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */,
+				3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */,
+				3A84D6D718AB3EB3003AF85B /* 2dDeafs-background.png */,
+				4C722E8318A54E03001B35FC /* controls.png */,
+				4C722E7F18A54CBD001B35FC /* listen.png */,
+				4C722E7B18A54999001B35FC /* info.png */,
+				1CBA8DA018A2C125001168D3 /* background_example.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,20 +282,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C722E8C18A55C71001B35FC /* 2dDeafs-pause.png in Resources */,
 				1CBA8DA118A2C125001168D3 /* background_example.png in Resources */,
 				4C722E7C18A54999001B35FC /* info.png in Resources */,
+				3A84D6DD18AB41C6003AF85B /* 2dDeafs-pause.png in Resources */,
 				1C5A7B1118A1460100E338B4 /* Images.xcassets in Resources */,
+				3A84D6DC18AB41C6003AF85B /* 2dDeafs-mic.png in Resources */,
 				1C5A7B0918A1460100E338B4 /* Main_iPhone.storyboard in Resources */,
-				4C722E8618A55B13001B35FC /* donini.jpg in Resources */,
-				4C722E8B18A55C71001B35FC /* 2dDeafs-mic.png in Resources */,
+				3A84D6D818AB3EB3003AF85B /* 2dDeafs-background-aux.png in Resources */,
 				4C722E8018A54CBD001B35FC /* listen.png in Resources */,
-				4C722E8E18A55DB8001B35FC /* BackGround_2.jpg in Resources */,
 				4C722E8418A54E03001B35FC /* controls.png in Resources */,
 				1C5A7B0018A1460100E338B4 /* InfoPlist.strings in Resources */,
-				1CB1BF9318A3F63F00C0DC19 /* Microphone.png in Resources */,
-				4C722E8A18A55C71001B35FC /* 2dDeafs-background.png in Resources */,
-				4C722E7A18A54929001B35FC /* Pause.png in Resources */,
+				3A84D6D918AB3EB3003AF85B /* 2dDeafs-background.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +314,7 @@
 				1C5A7B0F18A1460100E338B4 /* ViewController.m in Sources */,
 				1C5A7B0618A1460100E338B4 /* AppDelegate.m in Sources */,
 				1C5A7B0218A1460100E338B4 /* main.m in Sources */,
+				3A84D6D218AB1738003AF85B /* TesteFFTViewController.m in Sources */,
 				1C9C3C2618A9337800D5A1F3 /* SaveAudioViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

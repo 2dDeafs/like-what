@@ -12,6 +12,7 @@
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
 }
+
 @property (weak, nonatomic) IBOutlet UIButton *btRec;
 @property (weak, nonatomic) IBOutlet UIButton *btStop;
 @property (weak, nonatomic) IBOutlet UIButton *btPlay;
@@ -55,11 +56,11 @@
     recorder.meteringEnabled = YES;
     
     [recorder prepareToRecord];
-    
 }
 
 
-- (IBAction)RecordStop:(id)sender {
+- (IBAction)RecordStop:(id)sender
+{
     if (player.playing) {
         [player stop];
     }
@@ -73,18 +74,18 @@
         [recorder record];
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
         
-        [self flipImage:[self imageView] Horizontal:YES];
     }
     
-    [self displayInverse];
-    [self lbInstruction].text = @"Clique para pausar leituras";
+    [self flipImageAndButtons];
+    [self lbInstruction].text = @"Clique para pausar leitura";
 }
 
-- (IBAction)StopRec:(id)sender {
+
+- (IBAction)StopRec:(id)sender
+{
     [recorder stop];
     [[self timer] invalidate];
     
-    [self displayInverse];
     [self btPlay].enabled = YES;
     
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];
@@ -92,45 +93,56 @@
     
     [self lbInstruction].text = @"Leitura em pausa";
     
-    [self flipImage:[self imageView] Horizontal:YES];
-    
+    [self flipImageAndButtons];
 }
 
-- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag{
+
+- (void) audioRecorderDidFinishRecording:(AVAudioRecorder *)avrecorder successfully:(BOOL)flag
+{
     [_btRec setTitle:@"Record" forState:UIControlStateNormal];
 
 }
 
-- (IBAction)Playing:(id)sender {
+
+- (IBAction)Playing:(id)sender
+{
     if (!recorder.recording){
         player = [[AVAudioPlayer alloc] initWithContentsOfURL:recorder.url error:nil];
         [player setDelegate:self];
         
         [player play];
-        
     }
 }
 
-- (UIImageView *) flipImage:(UIImageView *)originalImage Horizontal:(BOOL)flipHorizontal {
-    if (flipHorizontal) {
-        
-        originalImage.transform = CGAffineTransformMake(originalImage.transform.a * -1, 0, 0, 1, originalImage.transform.tx, 0);
-    }else {
-        
-        originalImage.transform = CGAffineTransformMake(1, 0, 0, originalImage.transform.d * -1, 0, originalImage.transform.ty);
-    }    
-    return originalImage; }
 
-
--(void) printAveragePower {
+-(void) printAveragePower
+{
     [recorder updateMeters];
     NSLog(@"Channel #1: %.5f Peak: %.5f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
 }
 
-- (void)displayInverse {
+//  Efeito de "transicao" e inversao de botoes
+- (void) flipImageAndButtons
+{
+    UIImageView *backImageView = [[UIImageView alloc] initWithImage:[[self imageView] image]];
+    
+    backImageView.center = [self imageView].center;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.75];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
+                           forView:[self imageView]
+                             cache:YES];
+    
+    [backImageView removeFromSuperview];
+    [[self imageView] addSubview:backImageView];
+    
+    [UIView commitAnimations];
+    
     [self btRec].hidden = ![self btRec].hidden;
     [self btStop].hidden = ![self btStop].hidden;
 }
+
 
 - (void)didReceiveMemoryWarning
 {

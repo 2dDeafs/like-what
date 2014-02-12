@@ -7,23 +7,26 @@
 //
 
 #import "SaveAudioViewController.h"
+#import "ViewController.h"
+
 @interface SaveAudioViewController(){
     AVAudioRecorder *recorder;
 }
+
 - (IBAction)adicionar:(id)sender;
+
 @property NSMutableArray *directoryContents;
 @property BOOL isAdding;
 @property (weak, nonatomic) IBOutlet UITextField *lbNomeAudio;
 @property (weak, nonatomic) IBOutlet UIButton *btGravarAudio;
+
 @end
+
 
 @implementation SaveAudioViewController
 
-
 - (void)viewDidLoad
 {
-    _isAdding = NO;
-    
     NSString * documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSError *error;
     NSArray *aux = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsPath error:&error];
@@ -35,8 +38,6 @@
             [_directoryContents addObject:dir];
         }
     }
-    //NSLog(@"Arquivos: %d", _directoryContents.count);
-    
 }
 
 
@@ -46,29 +47,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+
 - (IBAction)adicionar:(id)sender {
-    if(!_isAdding){
-    
-    [_btAddAudio setTitle:@"Cancelar" forState:UIControlStateNormal];
-
-    CGPoint newCenter = _tbAudio.center;
-    newCenter.y += 100;
-    _tbAudio.center = newCenter;
-    _isAdding = YES;
-    
-    }
-    else{
-        [_btAddAudio setTitle:@"+ Adicionar Audio" forState:UIControlStateNormal];
-
-        CGPoint newCenter = _tbAudio.center;
-        newCenter.y -= 100;
-        _tbAudio.center = newCenter;
-        _isAdding = NO;
-        // passar foco para o campo de texto
-    }
-    
-    
+    [self performSegueWithIdentifier:@"saveAudioSegue" sender:nil];
 }
+
 
 - (IBAction)Gravar:(id)sender {
     if([_lbNomeAudio.text isEqualToString:@""]){
@@ -156,6 +139,14 @@
 
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton*)sender
+{
+    if([[segue identifier] isEqualToString:@"saveAudioSegue"])
+    {
+        ViewController *svad = (ViewController *)segue.destinationViewController;
+    }
+}
+
 - (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self lbNomeAudio] resignFirstResponder];
 }
@@ -164,6 +155,7 @@
     [textField resignFirstResponder];
     return YES;
 }
+
 
 @end
 
