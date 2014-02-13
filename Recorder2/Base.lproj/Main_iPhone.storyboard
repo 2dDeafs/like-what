@@ -16,8 +16,8 @@
                     </tabBar>
                     <connections>
                         <segue destination="cgQ-Sx-ZHi" kind="relationship" relationship="viewControllers" id="9M3-0L-UMI"/>
-                        <segue destination="iNE-2G-Cpt" kind="relationship" relationship="viewControllers" id="LTa-75-arK"/>
                         <segue destination="jmN-nw-5xg" kind="relationship" relationship="viewControllers" id="hwL-z3-bGN"/>
+                        <segue destination="iNE-2G-Cpt" kind="relationship" relationship="viewControllers" id="LTa-75-arK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A1u-CC-4eK" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -37,20 +37,20 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Perigo eminente!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SdH-vp-Ae1">
-                                <rect key="frame" x="20" y="124" width="280" height="21"/>
+                                <rect key="frame" x="20" y="95" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Alerta personalizado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8c-Sz-LR2">
-                                <rect key="frame" x="20" y="249" width="280" height="21"/>
+                                <rect key="frame" x="20" y="275" width="280" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ne-81-yM3">
-                                <rect key="frame" x="20" y="153" width="280" height="88"/>
+                                <rect key="frame" x="20" y="124" width="280" height="88"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">O &lt;nome do app&gt; auxilia o usuário com audição limitada a identificar um alerta sonoro ao seu redor. Tais como sirenes, buzinas, alarmes, gritos, etc.</string>
@@ -58,7 +58,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qQe-TY-rdQ">
-                                <rect key="frame" x="20" y="278" width="280" height="175"/>
+                                <rect key="frame" x="20" y="304" width="280" height="175"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <string key="text">Você também pode escolher um audio personalizado para que o &lt;nome do app&gt; o avise. 
@@ -167,11 +167,11 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
             </objects>
             <point key="canvasLocation" x="-43" y="-434"/>
         </scene>
-        <!--Navigation Controller - Item-->
+        <!--Navigation Controller - Alertas-->
         <scene sceneID="QW7-4z-qJO">
             <objects>
                 <navigationController definesPresentationContext="YES" id="jmN-nw-5xg" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" image="controls.png" id="FOd-OU-CfB"/>
+                    <tabBarItem key="tabBarItem" title="Alertas" image="controls.png" id="FOd-OU-CfB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="YrE-6F-G3a">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -191,7 +191,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                         <viewControllerLayoutGuide type="top" id="5DV-QO-n7b"/>
                         <viewControllerLayoutGuide type="bottom" id="adC-OC-QA2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="yqX-AI-7Dm">
+                    <view key="view" tag="1" contentMode="scaleToFill" id="yqX-AI-7Dm">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -199,20 +199,20 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YbC-0t-ecB">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="YbC-0t-ecB">
                                 <rect key="frame" x="0.0" y="65" width="320" height="453"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell alpha="0.89999997615814209" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celAudio" id="B16-JT-bze">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                    <tableViewCell alpha="0.89999997615814209" tag="1" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="celAudio" rowHeight="40" id="B16-JT-bze">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="40"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="B16-JT-bze" id="SdY-OA-vck">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="39"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tva-Z8-P4n">
-                                                    <rect key="frame" x="20" y="11" width="236" height="21"/>
+                                                    <rect key="frame" x="20" y="11" width="0.0" height="0.0"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -237,7 +237,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                             <rect key="frame" x="20" y="6" width="280" height="33"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                            <state key="normal" title="+ Adicionar Áudio">
+                            <state key="normal" title="+ Adicionar áudio">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -246,25 +246,23 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                         </button>
                     </navigationItem>
                     <connections>
-                        <outlet property="btAddAudio" destination="AJf-df-h06" id="sB9-1e-vtH"/>
-                        <outlet property="lbNomeAudio" destination="bWz-0H-jzg" id="qGe-SR-Vul"/>
                         <outlet property="tbAudio" destination="YbC-0t-ecB" id="LxF-fZ-lrl"/>
-                        <segue destination="lCt-fV-VtO" kind="push" identifier="saveAudioSegue" id="iHQ-gI-ReW"/>
+                        <segue destination="lCt-fV-VtO" kind="push" identifier="saveAudioSegue" id="Len-md-ARt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nVs-8Y-UPT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="345" y="304"/>
         </scene>
-        <!--View Controller - Ouvir-->
+        <!--Save Audio View Controller - Ouvir-->
         <scene sceneID="ePM-V2-39o">
             <objects>
-                <viewController modalTransitionStyle="flipHorizontal" id="lCt-fV-VtO" customClass="ViewController" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="flipHorizontal" id="lCt-fV-VtO" customClass="SaveAudioViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ypG-hw-lJ5"/>
                         <viewControllerLayoutGuide type="bottom" id="VjB-Kn-FHg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UqC-Q9-Oeh">
+                    <view key="view" tag="3" contentMode="scaleToFill" id="UqC-Q9-Oeh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -278,10 +276,10 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <state key="normal" title="Mic Button" image="2dDeafs-mic.png"/>
                                 <connections>
-                                    <action selector="RecordStop:" destination="lCt-fV-VtO" eventType="touchUpInside" id="mv1-ou-lLF"/>
+                                    <action selector="Gravar:" destination="lCt-fV-VtO" eventType="touchUpInside" id="9aF-my-5uP"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preencha o nome e grave o audio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-k2-iJG">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Preencha o nome e clique para gravar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JIA-k2-iJG">
                                 <rect key="frame" x="20" y="83" width="280" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -297,7 +295,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="StopRec:" destination="lCt-fV-VtO" eventType="touchUpInside" id="d0x-Eu-Ty7"/>
+                                    <action selector="Gravar:" destination="lCt-fV-VtO" eventType="touchUpInside" id="Ka9-v9-DQs"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bWz-0H-jzg">
@@ -313,10 +311,12 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                     <navigationItem key="navigationItem" id="sgx-tX-2Ra"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="btRec" destination="zCM-BF-0ea" id="uEu-BV-Rgm"/>
-                        <outlet property="btStop" destination="T0U-hV-LCX" id="aPf-jp-iwH"/>
-                        <outlet property="imageView" destination="AIY-Cn-7kx" id="tjo-hb-ktz"/>
-                        <outlet property="lbInstruction" destination="JIA-k2-iJG" id="RnR-vg-nmR"/>
+                        <outlet property="btRec" destination="zCM-BF-0ea" id="bny-dQ-JQr"/>
+                        <outlet property="btStop" destination="T0U-hV-LCX" id="jYz-fu-Nej"/>
+                        <outlet property="imageView" destination="AIY-Cn-7kx" id="6Ss-zw-Cdo"/>
+                        <outlet property="lbInstruction" destination="JIA-k2-iJG" id="xZV-uE-gpb"/>
+                        <outlet property="lbNomeAudio" destination="bWz-0H-jzg" id="UFD-bp-ytl"/>
+                        <segue destination="eiH-f0-9GO" kind="push" identifier="tableAudioSegue" id="A2o-NZ-qxf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="swd-sg-RfR" sceneMemberID="firstResponder"/>
@@ -338,4 +338,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="A2o-NZ-qxf"/>
+    </inferredMetricsTieBreakers>
 </document>

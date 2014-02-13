@@ -7,7 +7,6 @@
 //
 
 #import "SaveAudioViewController.h"
-#import "ViewController.h"
 
 @interface SaveAudioViewController(){
     AVAudioRecorder *recorder;
@@ -16,9 +15,12 @@
 - (IBAction)adicionar:(id)sender;
 
 @property NSMutableArray *directoryContents;
-@property BOOL isAdding;
+
 @property (weak, nonatomic) IBOutlet UITextField *lbNomeAudio;
-@property (weak, nonatomic) IBOutlet UIButton *btGravarAudio;
+@property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (weak, nonatomic) IBOutlet UIButton *btRec;
+@property (weak, nonatomic) IBOutlet UIButton *btStop;
 
 @end
 
@@ -27,6 +29,12 @@
 
 - (void)viewDidLoad
 {
+    [self btStop].hidden = YES;
+    
+    if ([self view].tag == 1) {
+        [[self navigationItem] setHidesBackButton:YES];
+    }
+    
     NSString * documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
     NSError *error;
     NSArray *aux = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:documentsPath error:&error];
@@ -48,30 +56,38 @@
 }
 
 
-- (IBAction)adicionar:(id)sender {
-    [self performSegueWithIdentifier:@"saveAudioSegue" sender:nil];
+- (IBAction)adicionar:(id)sender
+{
+    if (sender != nil) {
+        [self performSegueWithIdentifier:@"saveAudioSegue" sender:nil];
+    } else {
+        [self performSegueWithIdentifier:@"tableAudioSegue" sender:nil];
+    }
 }
 
 
 - (IBAction)Gravar:(id)sender {
     if([_lbNomeAudio.text isEqualToString:@""]){
-        UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"Você deve informar um nome para o áudio." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        
-        [alerta show];
-    }
-    
-    else{
+        [self lbInstruction].text = @"Preencha o nome!";
+        [self fadeOut:@"Preencha o nome e clique para gravar"];
+    } else {
         
         NSString *nomeAudio = [_lbNomeAudio.text stringByAppendingString:@".m4a"];
+        
         if(!recorder.recording){
             
-            [_btGravarAudio setTitle:@"Parar e Salvar" forState:UIControlStateNormal];
+            [self flipImageAndButtons];
+            
+            [self lbNomeAudio].enabled = NO;
+            
+            [self lbInstruction].text = @"Clique para parar e salvar";
             
             NSArray *pathComponents = [NSArray arrayWithObjects:
                                        [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
                                        nomeAudio, nil];
             
             NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
+            
             // Setup audio session
             AVAudioSession *session = [AVAudioSession sharedInstance];
             [session setCategory:AVAudioSessionCategoryPlayAndRecord error:nil];
@@ -93,25 +109,65 @@
             
             [recorder stop];
             
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Salvo" message:@"O Arquivo foi salvo com sucesso" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [self flipImageAndButtons];
             
-            [alerta show];
+//            [self lbInstruction].text = @"Arquivo salvo com sucesso!";
         
             [[self directoryContents] addObject: nomeAudio];
             [[self tbAudio] reloadData];
+            
             [[self lbNomeAudio] resignFirstResponder];
-            [_btGravarAudio setTitle:@"Iniciar Gravação" forState:UIControlStateNormal];
+            [self lbNomeAudio].text = @"";
+            [self lbNomeAudio].enabled = YES;
+            
+//            [self fadeOut:@"Clique para gravar"];
+            
             [self adicionar:nil];
         }
-
     }
-    
 }
 
 
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//  Efeito de "transicao" e inversao de botoes
+- (void) flipImageAndButtons
+{
+    UIImageView *backImageView = [[UIImageView alloc] initWithImage:[[self imageView] image]];
     
+    backImageView.center = [self imageView].center;
+    
+    [UIView beginAnimations:nil context:nil];
+    [UIView setAnimationDuration:0.65];
+    [UIView setAnimationTransition:UIViewAnimationTransitionFlipFromRight
+                           forView:[self imageView]
+                             cache:YES];
+    
+    [backImageView removeFromSuperview];
+    [[self imageView] addSubview:backImageView];
+    
+    [UIView commitAnimations];
+    
+    [self btRec].hidden = ![self btRec].hidden;
+    [self btStop].hidden = ![self btStop].hidden;
+}
+
+
+//  Fadeout texto e fadein outro texto
+-(void)fadeOut: (NSString*) texto
+{
+    [UIView animateWithDuration:1.4 animations:^{
+        [self lbInstruction].alpha = 0.0f;
+    } completion:^(BOOL finished) {
+        [self lbInstruction].text = texto;
+        [UIView animateWithDuration:0.5 animations:^{
+            [self lbInstruction].alpha = 1.0f;
+        } completion:^(BOOL finished) {}];
+    }];
+}
+
+
+//  Table view stuffs
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
     return 1;
 }
 
@@ -133,25 +189,23 @@
     
     lblTitle.text = [NSString stringWithFormat:@"%@", [_directoryContents objectAtIndex: indexPath.row]];
     
-    NSLog(@"%d", indexPath.row);
+    UISwitch *isOn = [[UISwitch alloc] initWithFrame:CGRectMake(251, 4, 51, 51)];
+
+    [isOn setOnTintColor:[UIColor colorWithRed:0.26 green:0.66 blue:1 alpha:0.75]];
+    
+    [audiocell addSubview:isOn];
     
     return audiocell;
-
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(UIButton*)sender
+
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    if([[segue identifier] isEqualToString:@"saveAudioSegue"])
-    {
-        ViewController *svad = (ViewController *)segue.destinationViewController;
-    }
-}
-
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     [[self lbNomeAudio] resignFirstResponder];
 }
 
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
+-(BOOL)textFieldShouldReturn:(UITextField *)textField
+{
     [textField resignFirstResponder];
     return YES;
 }

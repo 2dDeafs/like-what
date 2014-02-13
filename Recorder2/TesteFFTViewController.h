@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <Accelerate/Accelerate.h>
-#import <vecLib/vDSP_translate.h>
 #import <AVFoundation/AVFoundation.h>
 
 @interface TesteFFTViewController : UIViewController

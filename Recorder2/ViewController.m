@@ -28,8 +28,9 @@
 {
     [super viewDidLoad];
     
-    // Disable Stop/Play button when application launches
+    //  Botao Play oculto
     [self btPlay].enabled = NO;
+    [self btPlay].hidden = YES;
     [self btStop].hidden = YES;
     
     // Set the audio file
@@ -49,7 +50,6 @@
     [recordSetting setValue:[NSNumber numberWithInt:kAudioFormatMPEG4AAC] forKey:AVFormatIDKey];
     [recordSetting setValue:[NSNumber numberWithFloat:44100.0] forKey:AVSampleRateKey];
     [recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AVNumberOfChannelsKey];
-    //[recordSetting setValue:[NSNumber numberWithInt: 2] forKey:AV];
     
     // Initiate and prepare the recorder
     recorder = [[AVAudioRecorder alloc] initWithURL:outputFileURL settings:recordSetting error:NULL];
@@ -73,7 +73,8 @@
         // Start recording
         recorder.meteringEnabled = YES;
         [recorder record];
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(printAveragePower) userInfo:nil repeats:YES];
+        
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
         
     }
     
@@ -116,11 +117,27 @@
 }
 
 
--(void) printAveragePower
+-(void) timerCicle
 {
     [recorder updateMeters];
-    NSLog(@"Channel #1: %.5f Peak: %.5f", [self getDecibels:[recorder averagePowerForChannel:0]], [self getDecibels:[recorder peakPowerForChannel:0]]);
+    
+    if ([recorder peakPowerForChannel:0] == 0.0) {
+
+        //  Identifica se dispositivo é um iPod
+        if ([[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPod"]) {
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu iPod está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alerta show];
+        } else {
+            AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
+        }
+    }
+    
+    
+//    NSLog(@"Channel #1: %.5f Peak: %.5f", [self getDecibels:[recorder averagePowerForChannel:0]], [self getDecibels:[recorder peakPowerForChannel:0]]);
+    NSLog(@"Channel #1: %.5f Peak: %.5f", [recorder averagePowerForChannel:0], [recorder peakPowerForChannel:0]);
 }
+
 
 //  Efeito de "transicao" e inversao de botoes
 - (void) flipImageAndButtons
@@ -143,6 +160,18 @@
     [self btRec].hidden = ![self btRec].hidden;
     [self btStop].hidden = ![self btStop].hidden;
 }
+
+
+//  Nome do dispositivo
+- (NSString*) deviceName
+{
+    struct utsname systemInfo;
+    uname(&systemInfo);
+    
+    return [NSString stringWithCString:systemInfo.machine
+                              encoding:NSUTF8StringEncoding];
+}
+
 
 -(float) getDecibels: (float) appleValue
 {
