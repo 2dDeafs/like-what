@@ -124,8 +124,8 @@
     if ([recorder peakPowerForChannel:0] >= 0.0) {
 
         //  Identifica se dispositivo é um iPod
-        if ([[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPod"]) {
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu iPod está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        if (![[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPho"]) {
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu dispositivo está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
             
             [alerta show];
         } else {
