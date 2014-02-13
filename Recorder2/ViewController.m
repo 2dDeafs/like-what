@@ -36,7 +36,7 @@
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
                         [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject],
-                               @"AudioLIVE.m4a", nil];
+                               @"Default Sounds.m4a", nil];
    
     NSURL *outputFileURL = [NSURL fileURLWithPathComponents:pathComponents];
     
@@ -121,7 +121,7 @@
 {
     [recorder updateMeters];
     
-    if ([recorder peakPowerForChannel:0] == 0.0) {
+    if ([recorder peakPowerForChannel:0] >= 0.0) {
 
         //  Identifica se dispositivo é um iPod
         if ([[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPod"]) {

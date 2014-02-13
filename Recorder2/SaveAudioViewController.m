@@ -193,6 +193,10 @@
 
     [isOn setOnTintColor:[UIColor colorWithRed:0.26 green:0.66 blue:1 alpha:0.75]];
     
+    if ([[_directoryContents objectAtIndex:indexPath.row] isEqualToString:@"Default Sounds.m4a"]) {
+        [isOn setOn:YES];
+    }
+    
     [audiocell addSubview:isOn];
     
     return audiocell;
