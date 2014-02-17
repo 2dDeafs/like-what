@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#define DegreesToRadians(x) ((x) * M_PI / 180.0)
+
 @interface ViewController (){
     AVAudioRecorder *recorder;
     AVAudioPlayer *player;
@@ -19,6 +21,8 @@
 @property (weak, nonatomic) NSTimer *timer;
 @property (weak, nonatomic) IBOutlet UILabel *lbInstruction;
 @property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
+@property (weak, nonatomic) IBOutlet UIImageView *pizzaView;
 
 @end
 
@@ -59,6 +63,20 @@
     [recorder prepareToRecord];
 }
 
+-(void)viewDidAppear:(BOOL)animated
+{
+    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionRepeat |UIViewAnimationOptionCurveLinear animations:^{
+        
+        _pizzaView.transform = CGAffineTransformMakeRotation(M_PI + .000001);
+        
+    }completion:^(BOOL finished){
+        [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+
+            _pizzaView.transform = CGAffineTransformMakeRotation(M_PI + M_PI - .000001);
+
+        } completion:nil];
+    }];
+}
 
 - (IBAction)RecordStop:(id)sender
 {
@@ -145,6 +163,8 @@
     UIImageView *backImageView = [[UIImageView alloc] initWithImage:[[self imageView] image]];
     
     backImageView.center = [self imageView].center;
+    
+    
     
     [UIView beginAnimations:nil context:nil];
     [UIView setAnimationDuration:0.75];

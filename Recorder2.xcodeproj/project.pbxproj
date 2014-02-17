@@ -20,6 +20,7 @@
 		1CBA8DA118A2C125001168D3 /* background_example.png in Resources */ = {isa = PBXBuildFile; fileRef = 1CBA8DA018A2C125001168D3 /* background_example.png */; };
 		3A06F4FA18ABFB36004AE155 /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A06F4F918ABFB36004AE155 /* CoreAudio.framework */; };
 		3A06F4FB18ABFB42004AE155 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1C5A7AF518A1460100E338B4 /* Foundation.framework */; };
+		3A4669EF18B288E8009E2DB5 /* stripe-pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A4669EE18B288E8009E2DB5 /* stripe-pizza.png */; };
 		3A69FAEC18AC60AC000144F4 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A69FAEA18AC605A000144F4 /* Accelerate.framework */; };
 		3A84D6D218AB1738003AF85B /* TesteFFTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */; };
 		3A84D6D818AB3EB3003AF85B /* 2dDeafs-background-aux.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */; };
@@ -68,6 +69,7 @@
 		3A06F4F218ABF621004AE155 /* OouraFFT.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OouraFFT.m; sourceTree = "<group>"; };
 		3A06F4F318ABF621004AE155 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
 		3A06F4F918ABFB36004AE155 /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		3A4669EE18B288E8009E2DB5 /* stripe-pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stripe-pizza.png"; sourceTree = "<group>"; };
 		3A69FAEA18AC605A000144F4 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
 		3A84D6D018AB1738003AF85B /* TesteFFTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TesteFFTViewController.h; sourceTree = "<group>"; };
 		3A84D6D118AB1738003AF85B /* TesteFFTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TesteFFTViewController.m; sourceTree = "<group>"; };
@@ -193,6 +195,7 @@
 		3A84D6D518AB3E97003AF85B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3A4669EE18B288E8009E2DB5 /* stripe-pizza.png */,
 				3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */,
 				3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */,
 				3A84D6D618AB3EB3003AF85B /* 2dDeafs-background-aux.png */,
@@ -285,6 +288,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CBA8DA118A2C125001168D3 /* background_example.png in Resources */,
+				3A4669EF18B288E8009E2DB5 /* stripe-pizza.png in Resources */,
 				4C722E7C18A54999001B35FC /* info.png in Resources */,
 				3A84D6DD18AB41C6003AF85B /* 2dDeafs-pause.png in Resources */,
 				1C5A7B1118A1460100E338B4 /* Images.xcassets in Resources */,
