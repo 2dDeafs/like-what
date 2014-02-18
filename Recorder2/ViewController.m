@@ -65,17 +65,29 @@
 
 -(void)viewDidAppear:(BOOL)animated
 {
-    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionRepeat |UIViewAnimationOptionCurveLinear animations:^{
-        
-        _pizzaView.transform = CGAffineTransformMakeRotation(M_PI + .000001);
-        
-    }completion:^(BOOL finished){
-        [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear animations:^{
+    [super viewDidLoad];
+//    
+//    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState |  UIViewAnimationOptionRepeat animations:^{
+//        _pizzaView.transform = CGAffineTransformMakeRotation(M_PI);
+//    } completion:^(BOOL finished){
+//        [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
+//            _pizzaView.transform = CGAffineTransformMakeRotation(0);
+//        } completion:nil];
+//        
+//    }];
+}
 
-            _pizzaView.transform = CGAffineTransformMakeRotation(M_PI + M_PI - .000001);
+- (void) startRotationWithDuration: (float) duration
+{
+	CABasicAnimation *rotation;
+	rotation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
+	rotation.fromValue = [NSNumber numberWithFloat:0];
+	rotation.toValue = [NSNumber numberWithFloat:((360 * M_PI) / 180)];
+	rotation.duration = duration;
+	rotation.repeatCount = MAXFLOAT;
 
-        } completion:nil];
-    }];
+	[_pizzaView.layer addAnimation:rotation forKey:@"360"];
+
 }
 
 - (IBAction)RecordStop:(id)sender
@@ -93,6 +105,8 @@
         [recorder record];
         
         self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
+        
+        [self startRotationWithDuration:4.0];
         
     }
     
