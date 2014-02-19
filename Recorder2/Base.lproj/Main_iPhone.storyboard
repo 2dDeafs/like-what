@@ -95,7 +95,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                                 <rect key="frame" x="110" y="234" width="100" height="100"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
-                                <state key="normal" title="Mic Button" image="2dDeafs-mic.png"/>
+                                <state key="normal" title="Mic Button" image="pizza.png"/>
                                 <connections>
                                     <action selector="RecordStop:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="xYj-Qc-7DZ"/>
                                 </connections>
@@ -131,10 +131,6 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                                     <action selector="StopRec:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tmM-S3-9Bp"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stripe-pizza.png" translatesAutoresizingMaskIntoConstraints="NO" id="nVl-kL-uPc">
-                                <rect key="frame" x="93" y="216" width="135" height="135"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -147,7 +143,6 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
                         <outlet property="btStop" destination="I5e-IO-IzR" id="Wlg-P4-fi8"/>
                         <outlet property="imageView" destination="kfK-Au-Qb2" id="aID-jN-azc"/>
                         <outlet property="lbInstruction" destination="qYt-0m-jIA" id="rMx-fv-ibD"/>
-                        <outlet property="pizzaView" destination="nVl-kL-uPc" id="5Ai-C9-TAh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
@@ -336,7 +331,7 @@ Não sabe em que situação? Sua mãe lhe chamando enquanto você escuta sua mú
         <image name="controls.png" width="30" height="30"/>
         <image name="info.png" width="36" height="36"/>
         <image name="listen.png" width="30" height="30"/>
-        <image name="stripe-pizza.png" width="800" height="800"/>
+        <image name="pizza.png" width="250" height="250"/>
     </resources>
     <color key="tintColor" red="0.031372550874948502" green="0.0039215688593685627" blue="0.0039215688593685627" alpha="1" colorSpace="deviceRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

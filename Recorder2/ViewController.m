@@ -33,9 +33,9 @@
     [super viewDidLoad];
     
     //  Botao Play oculto
-    [self btPlay].enabled = NO;
-    [self btPlay].hidden = YES;
-    [self btStop].hidden = YES;
+    _btPlay.enabled = NO;
+    _btPlay.hidden = YES;
+    _btStop.layer.opacity = 0.0;
     
     // Set the audio file
     NSArray *pathComponents = [NSArray arrayWithObjects:
@@ -86,8 +86,35 @@
 	rotation.duration = duration;
 	rotation.repeatCount = MAXFLOAT;
 
-	[_pizzaView.layer addAnimation:rotation forKey:@"360"];
+	[_btRec.layer addAnimation:rotation forKey:@"360"];
+}
 
+- (void) stopRotation
+{
+    [self changeSize:1.0];
+    
+    [UIView animateWithDuration:0.5 animations:^{
+        _btRec.layer.opacity = 0.0;
+        _btStop.layer.opacity = 1.0;
+    } completion:^(BOOL finished){
+        
+        [_btRec.layer removeAnimationForKey:@"360"];
+        
+        [UIView animateWithDuration:0.5 animations:^{                    _btRec.layer.opacity = 1.0;
+            _btStop.layer.opacity = 0.0;
+        } completion:^(BOOL finished){
+        }];
+    }];
+}
+
+- (void) changeSize: (float) mult
+{
+    mult = (mult/100)+1;
+    
+    [UIView animateWithDuration:0.1 animations:^{
+        _btRec.transform = CGAffineTransformMakeScale(mult, mult);
+        _btRec.center = _imageView.center;
+    }];
 }
 
 - (IBAction)RecordStop:(id)sender
@@ -104,14 +131,27 @@
         recorder.meteringEnabled = YES;
         [recorder record];
         
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
         
-        [self startRotationWithDuration:4.0];
+        [self lbInstruction].text = @"Clique para pausar leitura";
         
+        [self startRotationWithDuration:2.0];
+        
+    } else {
+    
+        [recorder stop];
+        [[self timer] invalidate];
+    
+        [self btPlay].enabled = YES;
+    
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setActive:NO error:nil];
+    
+        [self lbInstruction].text = @"Leitura em pausa";
+        
+        [self stopRotation];
     }
     
-    [self flipImageAndButtons];
-    [self lbInstruction].text = @"Clique para pausar leitura";
 }
 
 
@@ -127,7 +167,6 @@
     
     [self lbInstruction].text = @"Leitura em pausa";
     
-    [self flipImageAndButtons];
 }
 
 
@@ -152,14 +191,16 @@
 -(void) timerCicle
 {
     [recorder updateMeters];
+
+    [self changeSize:[recorder peakPowerForChannel:0]];
     
     if ([recorder peakPowerForChannel:0] >= 0.0) {
 
         //  Identifica se dispositivo é um iPod
         if (![[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPho"]) {
-            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu dispositivo está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-            
-            [alerta show];
+//            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu dispositivo está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+//            
+//            [alerta show];
         } else {
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
         }

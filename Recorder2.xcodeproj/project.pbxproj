@@ -28,6 +28,7 @@
 		3A84D6DC18AB41C6003AF85B /* 2dDeafs-mic.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */; };
 		3A84D6DD18AB41C6003AF85B /* 2dDeafs-pause.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */; };
 		3AAC299618AC542E00D9ADEB /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AAC299518AC542E00D9ADEB /* AudioToolbox.framework */; };
+		3AF8F1D218B4D0B80073CF81 /* pizza.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AF8F1D118B4D0B80073CF81 /* pizza.png */; };
 		4C722E7C18A54999001B35FC /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7B18A54999001B35FC /* info.png */; };
 		4C722E8018A54CBD001B35FC /* listen.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E7F18A54CBD001B35FC /* listen.png */; };
 		4C722E8418A54E03001B35FC /* controls.png in Resources */ = {isa = PBXBuildFile; fileRef = 4C722E8318A54E03001B35FC /* controls.png */; };
@@ -78,6 +79,7 @@
 		3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-mic.png"; sourceTree = "<group>"; };
 		3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "2dDeafs-pause.png"; sourceTree = "<group>"; };
 		3AAC299518AC542E00D9ADEB /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		3AF8F1D118B4D0B80073CF81 /* pizza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pizza.png; sourceTree = "<group>"; };
 		4C722E7B18A54999001B35FC /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
 		4C722E7F18A54CBD001B35FC /* listen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listen.png; sourceTree = "<group>"; };
 		4C722E8318A54E03001B35FC /* controls.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = controls.png; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 		3A84D6D518AB3E97003AF85B /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				3AF8F1D118B4D0B80073CF81 /* pizza.png */,
 				3A4669EE18B288E8009E2DB5 /* stripe-pizza.png */,
 				3A84D6DA18AB41C6003AF85B /* 2dDeafs-mic.png */,
 				3A84D6DB18AB41C6003AF85B /* 2dDeafs-pause.png */,
@@ -290,6 +293,7 @@
 				1CBA8DA118A2C125001168D3 /* background_example.png in Resources */,
 				3A4669EF18B288E8009E2DB5 /* stripe-pizza.png in Resources */,
 				4C722E7C18A54999001B35FC /* info.png in Resources */,
+				3AF8F1D218B4D0B80073CF81 /* pizza.png in Resources */,
 				3A84D6DD18AB41C6003AF85B /* 2dDeafs-pause.png in Resources */,
 				1C5A7B1118A1460100E338B4 /* Images.xcassets in Resources */,
 				3A84D6DC18AB41C6003AF85B /* 2dDeafs-mic.png in Resources */,
