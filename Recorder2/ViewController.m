@@ -66,15 +66,6 @@
 -(void)viewDidAppear:(BOOL)animated
 {
     [super viewDidLoad];
-//    
-//    [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionCurveLinear | UIViewAnimationOptionBeginFromCurrentState |  UIViewAnimationOptionRepeat animations:^{
-//        _pizzaView.transform = CGAffineTransformMakeRotation(M_PI);
-//    } completion:^(BOOL finished){
-//        [UIView animateWithDuration:2.0 delay:0.0 options:UIViewAnimationOptionBeginFromCurrentState animations:^{
-//            _pizzaView.transform = CGAffineTransformMakeRotation(0);
-//        } completion:nil];
-//        
-//    }];
 }
 
 - (void) startRotationWithDuration: (float) duration
@@ -100,7 +91,8 @@
         
         [_btRec.layer removeAnimationForKey:@"360"];
         
-        [UIView animateWithDuration:0.5 animations:^{                    _btRec.layer.opacity = 1.0;
+        [UIView animateWithDuration:0.5 animations:^{
+            _btRec.layer.opacity = 1.0;
             _btStop.layer.opacity = 0.0;
         } completion:^(BOOL finished){
         }];
@@ -111,10 +103,18 @@
 {
     mult = (mult/100)+1;
     
-    [UIView animateWithDuration:0.1 animations:^{
-        _btRec.transform = CGAffineTransformMakeScale(mult, mult);
-        _btRec.center = _imageView.center;
-    }];
+    _btRec.imageView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+    
+    [UIView beginAnimations:nil context:nil];
+    CGRect old = _btRec.frame;
+    
+    float difx = (((old.size.width*mult)-old.size.width)/2.0);
+    float dify = (((old.size.height*mult)-old.size.height)/2.0);
+    
+    _btRec.frame = CGRectMake(old.origin.x-difx / 2.0, old.origin.y-dify / 2.0, old.size.width+difx, old.size.height+dify);
+    _btRec.center = _imageView.center;
+    
+    [UIView commitAnimations];
 }
 
 - (IBAction)RecordStop:(id)sender
@@ -131,7 +131,7 @@
         recorder.meteringEnabled = YES;
         [recorder record];
         
-        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.001 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.5 target:self selector:@selector(timerCicle) userInfo:nil repeats:YES];
         
         [self lbInstruction].text = @"Clique para pausar leitura";
         
@@ -194,13 +194,16 @@
 
     [self changeSize:[recorder peakPowerForChannel:0]];
     
-    if ([recorder peakPowerForChannel:0] >= 0.0) {
+    if ([recorder peakPowerForChannel:0] >=
+        .0) {
 
         //  Identifica se dispositivo é um iPod
         if (![[[self deviceName] substringWithRange:NSMakeRange(0, 4)] isEqualToString:@"iPho"]) {
-//            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu dispositivo está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-//            
-//            [alerta show];
+            UIAlertView *alerta = [[UIAlertView alloc] initWithTitle: @"Aviso!" message:@"O seu dispositivo está vibrando! Só que não :(." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            
+            [alerta show];
+            
+            
         } else {
             AudioServicesPlayAlertSound(kSystemSoundID_Vibrate);
         }
